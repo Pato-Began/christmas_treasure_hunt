@@ -1,0 +1,20 @@
+
+
+body {
+  background-color: #964b00;
+  font-family: 'Schoolbell', cursive;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.card {
+  border-radius: 10px;
+  background-color: #cd853f;
+}
+
+h2 {
+  font-weight: bold;
+}
