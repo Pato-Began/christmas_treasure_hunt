@@ -106,7 +106,7 @@ function App() {
           </p>
           <div className="mb-3">
             <img
-              src="/btc_map.png"
+              src={`${process.env.PUBLIC_URL}/images/btc_map.png`}
               alt="Bitcoin Lightning Network"
               className="img-fluid"
             />
