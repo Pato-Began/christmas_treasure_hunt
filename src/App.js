@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import Confetti from 'react-confetti';
 import './App.css';
 
 function App() {
   const [step, setStep] = useState(1);
   const [answer, setanswer] = useState('');  
   const [messageFound, setMessageFound] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const transactionHash = 'abcd1234efgh5678ijkl9012mnop3456qrst7890'; // Replace with your actual transaction hash
 
@@ -37,8 +39,7 @@ function App() {
   };
  
   const handleMessageSubmit = (e) => {
-    e.preventDefault();
-    console.log('Message submitted:', answer);
+    e.preventDefault();    
     if (answer.toLowerCase() === 'patrik + michaela; ani ocean nas nerozdelil') {
       setStep(6);
     } else {
@@ -48,11 +49,21 @@ function App() {
 
   const handleFinalCipherSubmit = (e) => {
     e.preventDefault();
-    if (answer.toLowerCase() === 'SdwulnPlfkdhoddqlrfhdqqdvqhurcgholo') {
+    if (answer === 'SdwulnPlfkdhoddqlrfhdqqdvqhurcgholo') {
       setMessageFound(true);
+      handleTaskComplete();
     } else {
       alert('Close, but not quite!');
     }
+  };
+
+  const handleTaskComplete = () => {
+    // Trigger the confetti animation
+    setShowConfetti(true);
+    
+    setTimeout(() => {
+      setShowConfetti(false);
+    }, 1000);
   };
 
   return (
