@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/christmas_treasure_hunt/static/css/main.35f8830a.css",
+    "main.js": "/christmas_treasure_hunt/static/js/main.a21e0524.js",
+    "static/js/156.d849bf6e.chunk.js": "/christmas_treasure_hunt/static/js/156.d849bf6e.chunk.js",
+    "index.html": "/christmas_treasure_hunt/index.html",
+    "main.35f8830a.css.map": "/christmas_treasure_hunt/static/css/main.35f8830a.css.map",
+    "main.a21e0524.js.map": "/christmas_treasure_hunt/static/js/main.a21e0524.js.map",
+    "156.d849bf6e.chunk.js.map": "/christmas_treasure_hunt/static/js/156.d849bf6e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.35f8830a.css",
+    "static/js/main.a21e0524.js"
+  ]
+}
