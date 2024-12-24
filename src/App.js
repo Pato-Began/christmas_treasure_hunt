@@ -6,14 +6,12 @@ function App() {
   const [step, setStep] = useState(1);
   const [answer, setanswer] = useState('');  
   const [messageFound, setMessageFound] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
-
-  const transactionHash = 'abcd1234efgh5678ijkl9012mnop3456qrst7890'; // Replace with your actual transaction hash
+  const [showConfetti, setShowConfetti] = useState(false);  
 
   const handleAppNameSubmit = (e) => {
     e.preventDefault();
     if (answer.toLowerCase() === 'phoenix wallet') {
-      setStep(3);
+      setStep(3);      
     } else {
       alert('Close, but not quite!');
     }
@@ -51,24 +49,26 @@ function App() {
     e.preventDefault();
     if (answer === 'SdwulnPlfkdhoddqlrfhdqqdvqhurcgholo') {
       setMessageFound(true);
-      handleTaskComplete();
+      runConfettiAnimation();
     } else {
       alert('Close, but not quite!');
     }
   };
 
-  const handleTaskComplete = () => {
+  const runConfettiAnimation = () => {
     // Trigger the confetti animation
+    console.log("Running the confetti animation");
     setShowConfetti(true);
     
     setTimeout(() => {
       setShowConfetti(false);
-    }, 1000);
+    }, 30000);
   };
 
-  return (
-    <div className="container mt-5">
 
+  return (
+    <div className="container mt-5">       
+      {showConfetti && <Confetti width={window.innerWidth} height={window.innerHeight} />}
 
       {step === 1 && (
         <div className="card p-4 text-white">
@@ -207,12 +207,15 @@ function App() {
       )}
 
       {messageFound && (
-        <div className="card p-4">
+        <div className="card p-4">          
           <h3>You found your treasure!</h3>
-          <p>
-            You're almost there! Open your Phoenix Wallet and share your Lightning Invoice with me to receive your treasure.
-          </p>
-          <p>Send me your invoice, and the gift is yours! 🎉</p>
+          <div className="mb-3">
+            <img
+              src={`${process.env.PUBLIC_URL}/images/miska_darcek_qr.png`}
+              alt="Lightning Invoice"
+              className="img-fluid"
+            />
+          </div>
         </div>
       )}
     </div>
